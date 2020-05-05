@@ -9,13 +9,14 @@ let clickCount = 0;
       // If clickcount is even then Player 2's on even clicks
       if (clickCount % 2 == 0) {
         console.log("player2 move");
-        boardArray.push($(event.currentTarget).text("O"));
-        ;
+        boardArray.push("O");
+        $(event.currentTarget).text("O");
         // Player 1's turn on odd clicks
     } else {
       console.log("player1 move");
-      boardArray.push($(event.currentTarget).text("X"));
-        };
+      boardArray.push("X");
+        $(event.currentTarget).text("X")
+    };
         console.log(boardArray)
         }
     
@@ -37,7 +38,7 @@ let clickCount = 0;
     const draw = () => {
       let clickCount = 0
       clickCount ++;
-      if (clickCount === 9) {
+      if (clickCount === 8) {
         console.log("draw")
         alert("DRAW! Reset Board");
         setTimeout(reset, 3000);
